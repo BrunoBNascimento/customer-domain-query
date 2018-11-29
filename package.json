@@ -7,9 +7,9 @@
     "babel-node": "babel-node",
     "test": "mocha ./src/**/**.spec.js --require @babel/register",
     "clean": "rm -rf build && mkdir build",
-    "build-app": "yarn clean && yarn cache clean && yarn && babel ./app.js --out-file ./build/app.js",
-    "build-server": "yarn build-app && babel src -d ./build/src",
-    "start": "yarn test && yarn build-server && node ./build/app.js",
+    "build-app": "npm clean && npm cache clean && npm && babel ./app.js --out-file ./build/app.js",
+    "build-server": "npm build-app && babel src -d ./build/src",
+    "start": "npm test && npm build-server && node ./build/app.js",
     "dev": "nodemon --exec npm run babel-node -- ./app.js"
   },
   "author": "",
